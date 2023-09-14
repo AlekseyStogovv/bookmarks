@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xmf6#)cl-m=rfx76s#3m6uqn*w@e_ta2r*_hee5t^0r(tqq&w9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'django_extensions',
 
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -94,7 +97,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
 ]
+
+# SOCIAL_AUTH_FACEBOOK_KEY = 'XXX' # ИД приложения Facebook
+# SOCIAL_AUTH_FACEBOOK_SECRET = 'XXX' # Секрет приложения Facebook
 
 AUTH_PASSWORD_VALIDATORS = [
     {
