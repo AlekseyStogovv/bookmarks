@@ -25,6 +25,11 @@ SECRET_KEY = 'django-insecure-xmf6#)cl-m=rfx76s#3m6uqn*w@e_ta2r*_hee5t^0r(tqq&w9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# if DEBUG:
+#     import mimetypes
+#     mimetypes.add_type('application/javascript', '.js', True)
+#     mimetypes.add_type('text/css', '.css', True)
+
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
@@ -32,6 +37,7 @@ ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
+    'images.apps.ImagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
